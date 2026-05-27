@@ -1,10 +1,19 @@
 import { useState } from 'react'
+import MobileTabScreen from './MobileScreen'
 
 function App() {
 
+  const [isTab, setIsTab] = useState("stopwatch")
+  const handleTab = () => {
+    if(isTab === 'stopwatch') {
+      setIsTab('timer')
+    }else{
+      setIsTab("stopwatch")
+    }
+  }
   return (
     <>
-      <h1 className='text-center text-3xl font-bold'>Stopwatch & Timer</h1>
+      <MobileTabScreen/>
     </>
   )
 }
